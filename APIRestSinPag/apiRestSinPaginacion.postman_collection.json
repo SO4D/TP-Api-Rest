@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "99392606-3151-4a98-8190-a40519acbab7",
+		"name": "apiRestSinPaginacion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29974626"
+	},
+	"item": [
+		{
+			"name": "Persona",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"nombre\": \"Gaspar\",\r\n//     \"apellido\": \"Coria\",\r\n//     \"dni\": 43077141,\r\n//     \"domicilio\": {\r\n//         \"calle\": \"X\",\r\n//         \"numero\": 1,\r\n//         \"localidad\": {\r\n//             \"id\": 1,\r\n//             \"denominacion\": \"Maipu\"\r\n//         }\r\n//     },\r\n//     \"libros\": [\r\n//         {\r\n//             \"titulo\": \"Ficciones\",\r\n//             \"fecha\": 1944,\r\n//             \"genero\": \"Cuento\",\r\n//             \"paginas\": \"250\",\r\n//             \"autores\": [\r\n//                 {\r\n//                     \"id\": 1,\r\n//                     \"nombre\": \"Jorge Luis\",\r\n//                     \"apellido\": \"Borges\",\r\n//                     \"biografia\": \"Jorge Luis Borges (1899-1986) nacio en Buenos Aires, fue un influyente escritor argentino conocido por su literatura surrealista y filosófica. Autor de obras como 'Ficciones' y 'El Aleph', exploró temas de laberintos, espejos y la naturaleza de la realidad en sus cuentos y ensayos, dejando una marca duradera en la literatura mundial.\"\r\n//                 }\r\n//             ]\r\n//         }\r\n//     ]\r\n// }\r\n\r\n{\r\n    \"nombre\": \"Pedro\",\r\n    \"apellido\": \"Riquelme\",\r\n    \"dni\": 11223344,\r\n    \"domicilio\": {\r\n        \"calle\": \"Jujuy\",\r\n        \"numero\": 222,\r\n        \"localidad\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"Lujan de Cuyo\"\r\n        }\r\n    },\r\n    \"libros\": [\r\n        {\r\n            \"titulo\": \"El túnel\",\r\n            \"fecha\": 1948,\r\n            \"genero\": \"Novela\",\r\n            \"paginas\": \"160\",\r\n            \"autores\": [\r\n                {\r\n                    \"id\": 2,\r\n                    \"nombre\": \"Ernesto\",\r\n                    \"apellido\": \"Sabato\",\r\n                    \"biografia\": \"Ernesto Sabato (1911-2011) fue un destacado escritor argentino y científico. Es conocido por su novela 'El túnel' y su obra filosófica. Además de su contribución literaria, Sabato fue un crítico social comprometido. Su legado literario y su influencia en la cultura argentina perduran hasta hoy.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n        \"id\": 1,\r\n        \"dni\": 18122022,\r\n        \"nombre\": \"Rodrigo\",\r\n        \"apellido\": \"Perez\",\r\n        \"domicilio\": {\r\n            \"id\": 1,\r\n            \"calle\": \"La Rioja\",\r\n            \"numero\": 321,\r\n            \"localidad\": {\r\n                \"id\": 1,\r\n                \"denominacion\": \"Lujan de Cuyo\"\r\n            }\r\n        },\r\n        \"libros\": [\r\n            {\r\n                \"id\": 1,\r\n                \"titulo\": \"Ficciones\",\r\n                \"fecha\": 1944,\r\n                \"genero\": \"Cuento\",\r\n                \"paginas\": 224,\r\n                \"autores\": [\r\n                    {\r\n                        \"id\": 1,\r\n                        \"nombre\": \"Jorge Luis\",\r\n                        \"apellido\": \"Borges\",\r\n                        \"biografia\": \"Jorge Luis Borges (1899-1986) nacio en Buenos Aires, fue un influyente escritor argentino conocido por su literatura surrealista y filosófica. Autor de obras como 'Ficciones' y 'El Aleph', exploró temas de laberintos, espejos y la naturaleza de la realidad en sus cuentos y ensayos, dejando una marca duradera en la literatura mundial.\"\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autores",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/autores/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"autores",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"nombre\": \"Jorge Luis\",\r\n//     \"apellido\": \"Borges\",\r\n//     \"biografia\": \"Jorge Luis Borges (1899-1986) fue un influyente escritor argentino conocido por su literatura surrealista y filosófica. Autor de obras como 'Ficciones' y 'El Aleph', exploró temas de laberintos, espejos y la naturaleza de la realidad en sus cuentos y ensayos, dejando una marca duradera en la literatura mundial.\"\r\n// }\r\n{\r\n    \"nombre\": \"Ernesto\",\r\n    \"apellido\": \"Sabato\",\r\n    \"biografia\": \"Ernesto Sabato (1911-2011) fue un destacado escritor argentino y científico. Es conocido por su novela 'El túnel' y su obra filosófica. Además de su contribución literaria, Sabato fue un crítico social comprometido. Su legado literario y su influencia en la cultura argentina perduran hasta hoy.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Jorge Luis\",\r\n    \"apellido\": \"Borges\",\r\n    \"biografia\": \"Jorge Luis Borges (1899-1986) nacio en Buenos Aires, fue un influyente escritor argentino conocido por su literatura surrealista y filosófica. Autor de obras como 'Ficciones' y 'El Aleph', exploró temas de laberintos, espejos y la naturaleza de la realidad en sus cuentos y ensayos, dejando una marca duradera en la literatura mundial.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/autores/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"autores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Localidades",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/localidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/localidades/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"denominacion\": \"Lujan de Cuyo\"\r\n// }\r\n//  {\r\n//      \"denominacion\": \"Godoy Cruz\"\r\n//  }\r\n\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/localidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/localidades/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
